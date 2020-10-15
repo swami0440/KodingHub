@@ -81,4 +81,4 @@ if __name__ == '__main__':
     end = "New York"
 
     print(f"All paths between: {start} and {end}: ",route_graph.get_paths(start,end))
-    print(f"Shortest path between {start} and {end}: ", route_graph.get_shortest_path(start,end))
+    print(f"Shortest  between {start} and {end}: ", route_graph.get_shortest_path(start,end))
