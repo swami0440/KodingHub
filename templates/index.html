@@ -9,13 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blog Template">
     <meta name="author" content="Pratik Bhavsar">
-    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     
     <!-- FontAwesome JS-->
-	<script defer src="assets/fontawesome/js/all.min.js"></script>
+	<script defer src="{{ url_for('static', filename='fontawesome/js/all.min.js') }}"></script>
     
     <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/theme-3.css">
+    <link id="theme-style" rel="stylesheet" href="{{ url_for('static', filename='css/theme-3.css') }}">
 
 </head> 
 
@@ -32,7 +32,7 @@
 
 			<div id="navigation" class="collapse navbar-collapse flex-column" >
 				<div class="profile-section pt-3 pt-lg-0">
-				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="{{ url_for('static', filename='images/profile.png') }}" alt="image" >
 					
 					<div class="bio mb-3">Hi, my name is Pratik Bhvsar and I have 5 years of experience in Development with Japanese Clients.<br><a href="about.html">Find out more about me</a></div><!--//bio-->
 					<ul class="social-list list-inline py-3 mx-auto">
@@ -87,7 +87,7 @@
 		    <div class="container">
 			    <div class="item mb-5">
 				    <div class="media">
-					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-1.jpg" alt="image">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ url_for('static', filename='images/blog/blog-post-thumb-1.jpg') }}" alt="image">
 					    <div class="media-body">
 						    <h3 class="title mb-1"><a href="blog-post.html">Why Every Developer Should Have A Blog</a></h3>
 						    <div class="meta mb-1"><span class="date">Published 2 days ago</span><span class="time">5 min read</span><span class="comment"><a href="#">8 comments</a></span></div>
@@ -98,7 +98,7 @@
 			    </div><!--//item-->
 			    <div class="item mb-5">
 				    <div class="media">
-					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-2.jpg" alt="image">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ url_for('static', filename='images/blog/blog-post-thumb-2.jpg') }}" alt="image">
 					    <div class="media-body">
 						    <h3 class="title mb-1"><a href="blog-post.html">A Guide to Becoming a Full-Stack Developer</a></h3>
 						    <div class="meta mb-1"><span class="date">Published 3 months ago</span><span class="time">3 min read</span><span class="comment"><a href="#">26 comments</a></span></div>
@@ -110,7 +110,7 @@
 			    
 			    <div class="item mb-5">
 				    <div class="media">
-					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-3.jpg" alt="image">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ url_for('static', filename='images/blog/blog-post-thumb-3.jpg') }}" alt="image">
 					    <div class="media-body">
 						    <h3 class="title mb-1"><a href="blog-post.html">High Performance JavaScript</a></h3>
 						    <div class="meta mb-1"><span class="date">Published 1 month ago</span><span class="time">8 min read</span><span class="comment"><a href="#">12 comments</a></span></div>
@@ -121,7 +121,7 @@
 			    </div><!--//item-->
 			    <div class="item mb-5">
 				    <div class="media">
-					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-4.jpg" alt="image">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ url_for('static', filename='images/blog/blog-post-thumb-4.jpg') }}" alt="image">
 					    <div class="media-body">
 						    <h3 class="title mb-1"><a href="blog-post.html">Top 5 JavaScript Frameworks</a></h3>
 						    <div class="meta mb-1"><span class="date">Published 2 months ago</span><span class="time">15 min read</span><span class="comment"><a href="#">3 comments</a></span></div>
@@ -133,7 +133,7 @@
 			    
 			    <div class="item mb-5">
 				    <div class="media">
-					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-5.jpg" alt="image">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ url_for('static', filename='images/blog/blog-post-thumb-5.jpg') }}" alt="image">
 					    <div class="media-body">
 						    <h3 class="title mb-1"><a href="blog-post.html">Learn React in 24 Hours</a></h3>
 						    <div class="meta mb-1"><span class="date">Published 2 months ago</span><span class="time">10 min read</span><span class="comment"><a href="#">23 comments</a></span></div>
@@ -145,7 +145,7 @@
 			    
 			    <div class="item">
 				    <div class="media">
-					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-6.jpg" alt="image">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ url_for('static', filename='images/blog/blog-post-thumb-6.jpg') }}" alt="image">
 					    <div class="media-body">
 						    <h3 class="title mb-1"><a href="blog-post.html">About Remote Working</a></h3>
 						    <div class="meta mb-1"><span class="date">Published 3 months ago</span><span class="time">2 min read</span><span class="comment"><a href="#">1 comment</a></span></div>
@@ -182,9 +182,9 @@
     
        
     <!-- Javascript -->          
-    <script src="assets/plugins/jquery-3.4.1.min.js"></script>
-    <script src="assets/plugins/popper.min.js"></script> 
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    <script src="{{ url_for('static', filename='plugins/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 
 
     
