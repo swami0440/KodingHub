@@ -3,10 +3,26 @@ import os
 from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import json
+from flask_mail import Mail
+import pymysql
+
+with open('config.json', 'r') as c:
+    params = json.load(c)["params"]
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+
+app.config.update(
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = '465',
+    MAIL_USE_SSL = True,
+    MAIL_USERNAME = params['gmail-user'],
+    MAIL_PASSWORD=  params['gmail-password']
+)
+mail = Mail(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://b39d11e9fe9bb9:284f46990974059@us-cdbr-east-02.cleardb.com/heroku_df998aa187223ac'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
@@ -19,8 +35,8 @@ class Contacts(db.Model):
     '''
     sno = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
-    phone_num = db.Column(db.String(12), nullable=False)
-    msg = db.Column(db.String(120), nullable=False)
+    phone = db.Column(db.String(12), nullable=False)
+    message = db.Column(db.String(120), nullable=False)
     date = db.Column(db.String(12), nullable=True)
     email = db.Column(db.String(20), nullable=False)
 
@@ -65,14 +81,20 @@ def contact():
         message = request.form.get('msg')
         print(name,phone,email,message)
         print(type(name),type(phone),type(email),type(message))
-        entry = Contacts(name=name, email=email, phone_num=phone, date=datetime.now(), msg=message )
+        entry = Contacts(name=name, email=email, phone=phone, date=datetime.now(), message=message )
         #entry = ('pratik','fdfd@dfd.d','88888','fdfdf','dfdfdfdf')
         db.session.add(entry)
         db.session.commit()
+        mail.send_message('New message from ' + name,
+                          sender=email,
+                          recipients=[params['gmail-user']],
+                          body=message + "\n Phone Number:" + phone+ "\n Mail from :" + email
+                          )
+
     return render_template("contact.html")
 
 
 if __name__ == '__main__':
     #app.run(port=8000, debug=True)
     db.init_app(app)
-    app.run(debug=True)
+    app.run(debug=False)
