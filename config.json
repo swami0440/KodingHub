@@ -2,6 +2,9 @@
   "params":
   {
     "gmail-user": "kodinghub4@gmail.com",
-    "gmail-password": "8805644662"
+    "gmail-password": "8805644662",
+    "no_of_posts": 5,
+    "admin-password" : "koding",
+    "admin_user" : "pratik"
   }
 }

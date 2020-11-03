@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style type="text/css">
+	
+body {
+    background-image: url('{{ url_for('static', filename='images/login.jpg') }}');
+  
+}
+
+#profile-img {
+    height:180px;
+}
+.h-80 {
+    height: 100% !important;
+}
+</style>
+
+
+<div class="container h-80 background">
+<div class="row align-items-center h-100">
+    <div class="col-3 mx-auto">
+        <div class="text-center">
+            <img id="profile-img" class="rounded-circle profile-img-card" src="{{ url_for('static', filename='images/logo.png') }}" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form  class="form-signin" action="/login" method="post">
+                
+            
+                <input type="password" name="password" id="inputPassword" class="form-control form-group" placeholder="password" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">enter</button>
+            </form><!-- /form -->
+        </div>
+    </div>
+</div>
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+</div>
+
+{% endblock %}    

@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block body %}
+    
+ 
+  <!-- Main Content -->
+  <div class="main-wrapper">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+
+    <section class="cta-section theme-bg-light py-5">
+        <div class="container text-center">
+          <h2 class="heading">Edit / Add new Blog</h2>
+         
+        </div><!--//container-->
+     
+        <form name="sentMessage" id="contactForm" action="/blog-edit/{{blog_id}}" method="post" novalidate>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Blog Title</label>
+              <input type="text" class="form-control" placeholder="blog_title" id="blog_title" name="blog_title" required data-validation-required-message="Please enter your Blog Name." value="{{blog.blog_title}}"> 
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          	<div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Blog Intro</label>
+              <textarea rows="5" class="form-control" placeholder="blog_intro" id="blog_intro" name="blog_intro" required data-validation-required-message="Please enter your Blog Intro."> {{blog.blog_intro}}</textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Blog Image Name</label>
+              <input type="tel" class="form-control" placeholder="blog_image_name" name="blog_image_name" id="blog_image_name" required data-validation-required-message="Please enter your Blog Image Name." value="{{blog.blog_image_name}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Blog Sulg</label>
+              <input type="tel" class="form-control" placeholder="blog_slug" name="blog_slug" id="blog_slug" required data-validation-required-message="Please enter a BLog Slug." value="{{blog.blog_slug}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Blog Category</label>
+              <input type="tel" class="form-control" placeholder="blog_category" name="blog_category" id="blog_category" required data-validation-required-message="Please enter a BLog Category" value="{{blog.blog_category}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+         
+ 		
+          <br>
+
+            <nav class="blog-nav nav nav-justified my-5">
+                  <div class="container">
+                     <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+                        <a class="btn btn-warning" href="/dash/{{'blog'}}" target="_self">Cancel</a>
+                         
+                     </div>
+                 </div>
+            </nav>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
