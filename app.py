@@ -22,7 +22,7 @@ app.config.update(
 )
 mail = Mail(app)
 app.config[
-    'SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://b39d11e9fe9bb9:284f46990974059@us-cdbr-east-02.cleardb.com/heroku_df998aa187223ac'
+    'SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
